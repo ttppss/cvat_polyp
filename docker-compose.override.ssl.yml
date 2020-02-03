@@ -1,0 +1,10 @@
+version: "2.3"
+
+services:
+  cvat:
+    environment:
+      ALLOWED_HOSTS: '*'
+      DJANGO_MODWSGI_EXTRA_ARGS: --https-only --allow-localhost --ssl-certificate /etc/ssl/cvat-certs/localhost --https-port 8443 --server-name ycao-hadoop.cs.uml.edu
+    ports:
+      - "443:8443"
+      - "8080:8080"
